@@ -15,6 +15,7 @@ document.querySelectorAll(".nav-links a").forEach(link => {
   });
 });
 
+
 /* ===== Day 5: Search Handling ===== */
 function handleSearch(event) {
   event.preventDefault();
