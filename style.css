@@ -1,15 +1,23 @@
-/* ===== Reset & Base ===== */
+/* ===== Reset ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===== Body ===== */
 body {
-    font-family: "Segoe UI", Tahoma, sans-serif;
-    line-height: 1.6;
-    background: linear-gradient(135deg, #f4f7fb, #e9efff);
-    color: #2c2c2c;
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+    background-size: 300% 300%;
+    animation: gradientBG 12s ease infinite;
+    color: #222;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* ===== Header ===== */
@@ -17,105 +25,123 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 40px;
-    background: linear-gradient(90deg, #1e1e2f, #2b2b5f);
-    color: #ffffff;
+    padding: 20px 45px;
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    color: white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
 }
 
 header h1 {
-    font-size: 26px;
-    letter-spacing: 1px;
+    font-size: 28px;
+    font-weight: 700;
 }
 
 header ul {
-    list-style: none;
     display: flex;
-    gap: 25px;
+    list-style: none;
+    gap: 30px;
 }
 
 header a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    position: relative;
 }
 
-header a:hover {
-    color: #ffd369;
+header a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #ffe259;
+    left: 0;
+    bottom: -6px;
+    transition: 0.3s;
 }
 
-/* ===== Hero Section ===== */
+header a:hover::after {
+    width: 100%;
+}
+
+/* ===== Hero ===== */
 section:first-of-type {
     text-align: center;
-    padding: 90px 20px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: #ffffff;
+    padding: 110px 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2, #ff758c);
+    color: white;
 }
 
 section:first-of-type h2 {
-    font-size: 42px;
-    margin-bottom: 15px;
+    font-size: 48px;
+    margin-bottom: 20px;
 }
 
 section:first-of-type p {
-    max-width: 650px;
+    font-size: 20px;
+    max-width: 700px;
     margin: auto;
-    font-size: 18px;
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 section:first-of-type button {
-    margin-top: 30px;
-    padding: 14px 30px;
-    font-size: 16px;
+    margin-top: 35px;
+    padding: 15px 36px;
+    font-size: 17px;
     border: none;
-    border-radius: 30px;
-    background-color: #ffd369;
-    color: #2c2c2c;
+    border-radius: 40px;
+    background: linear-gradient(90deg, #ffe259, #ffa751);
+    color: #222;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 section:first-of-type button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transform: scale(1.08);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
 }
 
 /* ===== Content Sections ===== */
-section {
-    padding: 60px 25px;
+section:not(:first-of-type) {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 45px;
+    border-radius: 18px;
+    color: white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
 }
 
-section:not(:first-of-type) {
-    max-width: 1000px;
-    margin: 40px auto;
-    background-color: #ffffff;
-    border-radius: 12px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+section:nth-of-type(2) {
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+}
+
+section:nth-of-type(3) {
+    background: linear-gradient(135deg, #ff9966, #ff5e62);
+}
+
+section:nth-of-type(4) {
+    background: linear-gradient(135deg, #7f00ff, #e100ff);
 }
 
 section h3 {
-    font-size: 26px;
-    margin-bottom: 12px;
-    color: #3a3a7a;
+    font-size: 30px;
+    margin-bottom: 15px;
 }
 
 section p {
-    font-size: 16px;
-    color: #555;
+    font-size: 17px;
+    line-height: 1.7;
 }
 
 /* ===== Footer ===== */
 footer {
     text-align: center;
-    padding: 30px 20px;
-    background: #1e1e2f;
-    color: #ffffff;
-    margin-top: 60px;
+    padding: 35px 20px;
+    background: linear-gradient(90deg, #232526, #414345);
+    color: #f1f1f1;
 }
 
 footer p {
     font-size: 14px;
-    opacity: 0.8;
+    opacity: 0.85;
 }
